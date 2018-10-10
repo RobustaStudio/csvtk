@@ -37,6 +37,7 @@ var RootCmd = &cobra.Command{
 Version: %s
 
 Author: Wei Shen <shenwei356@gmail.com>
+		Mohamed Al Ashaal <mohamed.alashaal@robustastudio.com>
 
 Documents  : http://shenwei356.github.io/csvtk
 Source code: https://github.com/shenwei356/csvtk

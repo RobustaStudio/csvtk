@@ -112,11 +112,11 @@ func (csvReader *CSVReader) Run() {
 				csvReader.Ch <- CSVRecordsChunk{id, chunkData[0:i], nil}
 				break
 			}
-			if err != nil {
-				csvReader.Ch <- CSVRecordsChunk{id, chunkData[0:i], err}
-				break
-			}
-			if record == nil {
+			// if err != nil {
+			// 	csvReader.Ch <- CSVRecordsChunk{id, chunkData[0:i], err}
+			// 	break
+			// }
+			if err != nil || record == nil {
 				continue
 			}
 			if csvReader.IgnoreEmptyRow {
