@@ -3,8 +3,6 @@
 - **Documents:** [http://bioinf.shenwei.me/csvtk](http://bioinf.shenwei.me/csvtk/)
 ( [**Usage**](http://bioinf.shenwei.me/csvtk/usage/)  and [**Tutorial**](http://bioinf.shenwei.me/csvtk/tutorial/)). [中文介绍](http://bioinf.shenwei.me/csvtk/chinese)
 
-- **Note:** This repo is a fork of the [**main**](https://github.com/shenwei356/csvtk) repo with some our fixes.
-
 ## Introduction
 
 Similar to FASTA/Q format in field of Bioinformatics,
@@ -23,6 +21,15 @@ support selecting columns with column names either.***
 and also easy to be integrated into analysis pipelines**.
 It could save you much time of writing Python/R scripts.
 
+## Robusta Notes & Changes
+
+- **Notes:** 
+    - This repo is a fork of the [**main**](https://github.com/shenwei356/csvtk) repo with some our fixes.
+
+- **Updates**
+    - 11-Oct-2018
+        - Forced the parser to ignore the malformed csv line(s)
+        - Added a new sub-command `replace2`, so we can replace using custom javascript function on the fly
 
 ## Table of Contents
 
@@ -97,6 +104,7 @@ It could save you much time of writing Python/R scripts.
 -  `rename` rename column names
 -  `rename2` rename column names by regular expression
 -  `replace` replace data of selected fields by regular expression
+-  `replace2` replace data of selected fields using javascript function.
 -  `mutate` create new columns from selected fields by regular expression
 -  `mutate2` create new column from selected fields by awk-like arithmetic/string expressions
 -  `gather` gather columns into key-value pairs
