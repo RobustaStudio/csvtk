@@ -21,6 +21,8 @@ support selecting columns with column names either.***
 and also easy to be integrated into analysis pipelines**.
 It could save you much time of writing Python/R scripts.
 
+With the latest updates (RobustaVersion), you can use javascript to hack/workaround csv files!
+
 ## Robusta Notes & Changes
 
 - **Notes:** 
@@ -29,7 +31,7 @@ It could save you much time of writing Python/R scripts.
 - **Updates**
     - 11-Oct-2018
         - Forced the parser to ignore the malformed csv line(s)
-        - Added a new sub-command `replace2`, so we can replace using custom javascript function on the fly
+        - Added a new sub-command `replace2`, so we can replace using custom javascript function on the fly ;)
 
 ## Table of Contents
 
