@@ -25,14 +25,12 @@ import (
 	"fmt"
 	"regexp"
 	"runtime"
+	"strings"
 
 	"github.com/robertkrimen/otto"
 	"github.com/shenwei356/xopen"
 	"github.com/spf13/cobra"
 )
-
-// javascript VM
-var jsVM = otto.New()
 
 // replace2Cmd represents the replace command
 var replace2Cmd = &cobra.Command{
@@ -227,7 +225,13 @@ Examples: Adding space to all bases.
 }
 
 func execJSFunc(cb, val string) string {
-	res, err := jsVM.Run(fmt.Sprintf("return (%s)(%s)", cb, val))
+	val = `"` + strings.Replace(val, `"`, `\"`, -1) + `"`
+	vm := otto.New()
+	_, err := vm.Run(fmt.Sprintf("exports = (%s)(%s)", cb, val))
+	if err != nil {
+		return val
+	}
+	res, err := vm.Get("exports")
 	if err != nil {
 		return val
 	}
